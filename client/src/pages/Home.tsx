@@ -1,4 +1,6 @@
 import { CabinSilhouette } from "@/components/ui/CabinSilhouette";
+import { SubscriptionForm } from "@/components/SubscriptionForm";
+import { Toaster } from "@/components/ui/toaster";
 
 export default function Home() {
   return (
@@ -15,9 +17,16 @@ export default function Home() {
         </h1>
         
         {/* Subtitle */}
-        <p className="font-['Roboto',_sans-serif] text-lg text-[#333333] opacity-80">
+        <p className="font-['Roboto',_sans-serif] text-lg text-[#333333] opacity-80 mb-8">
           building...
         </p>
+        
+        {/* Subscription Form */}
+        <div className="max-w-md mx-auto">
+          <div className="bg-white/50 backdrop-blur-sm rounded-lg p-6 shadow-sm border border-[#D2B48C]/30">
+            <SubscriptionForm />
+          </div>
+        </div>
       </main>
 
       {/* Nature Accent at bottom */}
@@ -35,6 +44,9 @@ export default function Home() {
           ></path>
         </svg>
       </div>
+      
+      {/* Toast notifications */}
+      <Toaster />
 
       {/* Add the animation keyframes using style tag */}
       <style jsx global>{`
