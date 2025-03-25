@@ -49,7 +49,8 @@ export default function Home() {
       <Toaster />
 
       {/* Add the animation keyframes using style tag */}
-      <style jsx global>{`
+      <style dangerouslySetInnerHTML={{
+        __html: `
         @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
         
         @keyframes fadeIn {
@@ -69,7 +70,7 @@ export default function Home() {
         .animate-float {
           animation: float 6s ease-in-out infinite;
         }
-      `}</style>
+      `}} />
     </div>
   );
 }

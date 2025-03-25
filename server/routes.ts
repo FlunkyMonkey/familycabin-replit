@@ -1,10 +1,14 @@
 import type { Express, Request, Response } from "express";
 import { createServer, type Server } from "http";
-import { storage } from "./storage";
+import { storage } from "./fileStorage";  // Use the file storage instead
 import { subscriberFormSchema } from "@shared/schema";
 import { z } from "zod";
+import { ensureDataDirExists } from "./fileManager";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Ensure data directory exists on startup
+  ensureDataDirExists();
+  
   // Subscribers API Routes
   
   // Create a new subscriber
